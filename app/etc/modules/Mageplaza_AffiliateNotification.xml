@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mageplaza_AffiliateNotification extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Mageplaza.com  License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://mageplaza.com/license-agreement/
+ * 
+ * @category       Mageplaza
+ * @package        Mageplaza_AffiliateNotification
+ * @copyright      Copyright (c) 2016
+ * @license        https://mageplaza.com/license-agreement/
+ */
+-->
+<config>
+    <modules>
+        <Mageplaza_AffiliateNotification>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Core />
+             </depends>
+        </Mageplaza_AffiliateNotification>
+    </modules>
+</config>

@@ -1,0 +1,44 @@
+<?php
+/**
+ * Mageplaza_AffiliateNotification extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com  License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://mageplaza.com/license-agreement/
+ *
+ * @category       Mageplaza
+ * @package        Mageplaza_AffiliateNotification
+ * @copyright      Copyright (c) 2016
+ * @license        https://mageplaza.com/license-agreement/
+ */
+/**
+ * Notification view template
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_AffiliateNotification
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php
+$_notification = $this->getCurrentNotification();
+?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="page-title notification-title">
+    <h1><?php echo $_notification->getTitle(); ?></h1>
+</div>
+<div class="notification-view">
+    <div class="notification-description">
+        <?php echo $_notification->getDescription(); ?>
+    </div>
+    <div class="notification-content">
+        <?php echo $_notification->getContent(); ?>
+    </div>
+
+    <div class="notification-meta">
+        <?php echo Mage::helper('mageplaza_affiliatenotification')->__('Updated at'); ?><?php echo Mage::helper('core')->formatDate($_notification->getUpdatedAt(), 'full', false); ?>
+    </div>
+
+</div>

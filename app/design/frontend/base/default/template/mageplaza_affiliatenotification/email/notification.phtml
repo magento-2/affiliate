@@ -1,0 +1,22 @@
+<?php
+$_notification = $this->getNotification();
+?>
+<div class="page-title notification-title">
+    <h3><?php echo $_notification->getTitle(); ?></h3>
+</div>
+<div class="notification-view">
+    <div class="notification-description">
+        <?php echo $_notification->getDescription(); ?>
+    </div>
+    <div class="notification-content">
+        <?php echo $_notification->getContent(); ?>
+    </div>
+    <p class="notification-page">
+        <a href="<?php echo $this->getAffiliateUrl();?>"><?php echo Mage::helper('mageplaza_affiliatenotification')->__('Visit Notification Board'); ?></a>
+    </p>
+
+    <div class="notification-meta">
+        <small><?php echo Mage::helper('mageplaza_affiliatenotification')->__('Posted on'); ?> <?php echo Mage::helper('core')->formatDate($_notification->getUpdatedAt(), 'full', false); ?></small>
+    </div>
+
+</div>

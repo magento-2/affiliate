@@ -1,0 +1,36 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * http://wiki.mageplaza.com/general/license.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @copyright   Copyright (c) 2015 Mageplaza (https://mageplaza.com/)
+ * @license     https://mageplaza.com/license-agreement.html
+ */
+$_affAccount = $this->getAffiliateAccount();
+$isEnable=$this->isNotificationEnable();
+?>
+<?php if($isEnable): ?>
+    <div class="fieldset">
+        <div class="box-head">
+            <h2><?php echo $this->__('Affiliate Notification') ?></h2>
+        </div>
+        <ul class="form-list affiliate-input-box">
+            <li class="control">
+                <div class="input-box">
+                    <input type="checkbox" name="account[email_notification_news]" title="<?php echo $this->__('Notify me when have news') ?>" value="1" id="email_notification_news" class="checkbox" <?php if ($_affAccount->getEmailNotificationNews()): ?>checked="checked"<?php endif ?>/>
+                </div>
+                <label for="email_notification_news"><?php echo $this->__('Notify me when have news') ?></label>
+            </li>
+        </ul>
+    </div>
+<?php endif ?>

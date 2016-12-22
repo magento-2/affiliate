@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mageplaza_AffiliateNotification extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Mageplaza.com  License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://mageplaza.com/license-agreement/
+ * 
+ * @category       Mageplaza
+ * @package        Mageplaza_AffiliateNotification
+ * @copyright      Copyright (c) 2016
+ * @license        https://mageplaza.com/license-agreement/
+ */
+-->
+<config>
+    <modules>
+        <Mageplaza_AffiliateNotification>
+            <version>1.0.0</version>
+        </Mageplaza_AffiliateNotification>
+    </modules>
+    <global>
+        <resources>
+            <mageplaza_affiliatenotification_setup>
+                <setup>
+                    <module>Mageplaza_AffiliateNotification</module>
+                    <class>Mageplaza_AffiliateNotification_Model_Resource_Setup</class>
+                </setup>
+            </mageplaza_affiliatenotification_setup>
+        </resources>
+        <blocks>
+            <mageplaza_affiliatenotification>
+                <class>Mageplaza_AffiliateNotification_Block</class>
+            </mageplaza_affiliatenotification>
+        </blocks>
+        <helpers>
+            <mageplaza_affiliatenotification>
+                <class>Mageplaza_AffiliateNotification_Helper</class>
+            </mageplaza_affiliatenotification>
+        </helpers>
+        <models>
+            <mageplaza_affiliatenotification>
+                <class>Mageplaza_AffiliateNotification_Model</class>
+                <resourceModel>mageplaza_affiliatenotification_resource</resourceModel>
+            </mageplaza_affiliatenotification>
+            <mageplaza_affiliatenotification_resource>
+                <class>Mageplaza_AffiliateNotification_Model_Resource</class>
+                <entities>
+                    <notification>
+                        <table>mageplaza_affiliatenotification_notification</table>
+                    </notification>
+                </entities>
+            </mageplaza_affiliatenotification_resource>
+        </models>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <mageplaza_affiliatenotification>
+                        <class>Mageplaza_AffiliateNotification_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </mageplaza_affiliatenotification>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+        <template>
+            <email>
+                <affiliate_notification_email_notification_template translate="label" module="mageplaza_affiliatenotification">
+                    <label>Affiliate Notification Email</label>
+                    <file>affiliate/email_notification.html</file>
+                    <type>html</type>
+                </affiliate_notification_email_notification_template>
+            </email>
+        </template>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <mageplaza_affiliatenotification>
+                    <file>mageplaza_affiliatenotification.xml</file>
+                </mageplaza_affiliatenotification>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Mageplaza_AffiliateNotification>
+                    <files>
+                        <default>Mageplaza_AffiliateNotification.csv</default>
+                    </files>
+                </Mageplaza_AffiliateNotification>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Mageplaza_AffiliateNotification before="Mage_Adminhtml">Mageplaza_AffiliateNotification_Adminhtml</Mageplaza_AffiliateNotification>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <mageplaza_affiliatenotification>
+                <use>standard</use>
+                <args>
+                    <module>Mageplaza_AffiliateNotification</module>
+                    <frontName>affiliate_notification</frontName>
+                </args>
+            </mageplaza_affiliatenotification>
+        </routers>
+        <layout>
+            <updates>
+                <mageplaza_affiliatenotification>
+                    <file>mageplaza_affiliatenotification.xml</file>
+                </mageplaza_affiliatenotification>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Mageplaza_AffiliateNotification>
+                    <files>
+                        <default>Mageplaza_AffiliateNotification.csv</default>
+                    </files>
+                </Mageplaza_AffiliateNotification>
+            </modules>
+        </translate>
+        <events>
+            <affiliate_account_save_setting>
+                <observers>
+                    <affiliatenotification_observers>
+                        <class>mageplaza_affiliatenotification/observer</class>
+                        <method>accountSaveSetting</method>
+                    </affiliatenotification_observers>
+                </observers>
+            </affiliate_account_save_setting>
+        </events>
+    </frontend>
+    <default>
+        <affiliate>
+            <notification>
+                <is_enabled>1</is_enabled>
+                <url_prefix>affiliatenotification</url_prefix>
+                <email_notification_template>affiliate_notification_email_notification_template</email_notification_template>
+            </notification>
+        </affiliate>
+    </default>
+</config>

@@ -1,0 +1,64 @@
+<?php
+/**
+ * Mageplaza_AffiliateNotification extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com  License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://mageplaza.com/license-agreement/
+ *
+ * @category       Mageplaza
+ * @package        Mageplaza_AffiliateNotification
+ * @copyright      Copyright (c) 2016
+ * @license        https://mageplaza.com/license-agreement/
+ */
+/**
+ * Notification list template
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_AffiliateNotification
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php $_notifications = $this->getNotifications();
+$_isEnabled           = $this->isEnable();
+$isAffiliate          = $this->isAffiliateLogin();
+?>
+<?php if ($_isEnabled && $isAffiliate): ?>
+    <div class="affiliate-notification-dashboard">
+        <div class="page-title notification-title">
+            <h1><?php echo Mage::helper('mageplaza_affiliatenotification')->__('Notifications') ?></h1>
+        </div>
+        <?php if ($_notifications->getSize() > 0) : ?>
+            <div class="notification-list-container">
+                <?php foreach ($_notifications as $_notification) : ?>
+                    <div class="notification-list-item">
+                        <div class="item-title">
+                            <a href="<?php echo $_notification->getNotificationUrl() ?>">
+                                <?php echo $_notification->getTitle(); ?>
+                            </a>
+                        </div>
+
+                        <div class="notification-item-meta">
+                            <div class="notification-description">
+                                <?php echo $_notification->getDescription(); ?>
+                                <br>
+                                <small>
+                                    <?php Mage::helper('mageplaza_affiliatenotification')->__('Posted on') ?>
+                                    <?php echo Mage::helper('core')->formatDate($_notification->getCreatedAt(), 'full', false); ?>
+                                </small>
+                            </div>
+                        </div>
+
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <?php echo $this->getPagerHtml(); ?>
+        <?php else : ?>
+            <?php echo Mage::helper('mageplaza_affiliatenotification')->__('There are no notifications at this moment'); ?>
+        <?php endif; ?>
+    </div>
+<?php endif ?>

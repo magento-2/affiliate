@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mageplaza_AffiliateNotification extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Mageplaza.com  License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://mageplaza.com/license-agreement/
+ * 
+ * @category       Mageplaza
+ * @package        Mageplaza_AffiliateNotification
+ * @copyright      Copyright (c) 2016
+ * @license        https://mageplaza.com/license-agreement/
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <mageplaza_affiliatenotification translate="title"
+                                                                        module="mageplaza_affiliatenotification">
+                                        <title>AffiliateNotification</title>
+                                    </mageplaza_affiliatenotification>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <affiliate>
+                        <children>
+                            <mageplaza_affiliatenotification translate="title" module="mageplaza_affiliatenotification">
+                                <title>Manage Notifications</title>
+                                <sort_order>40</sort_order>
+                            </mageplaza_affiliatenotification>
+                        </children>
+                    </affiliate>
+
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <affiliate>
+            <children>
+                <mageplaza_affiliatenotification translate="title" module="mageplaza_affiliatenotification">
+                    <title>Manage Notifications</title>
+                    <sort_order>40</sort_order>
+                    <action>adminhtml/affiliatenotification_notification</action>
+                </mageplaza_affiliatenotification>
+            </children>
+        </affiliate>
+
+    </menu>
+</config>

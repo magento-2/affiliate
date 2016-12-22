@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mageplaza_AffiliateNotification extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Mageplaza.com  License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://mageplaza.com/license-agreement/
+ * 
+ * @category       Mageplaza
+ * @package        Mageplaza_AffiliateNotification
+ * @copyright      Copyright (c) 2016
+ * @license        https://mageplaza.com/license-agreement/
+ */
+-->
+<layout>
+    <mageplaza_affiliatenotification_notification_view translate="label" module="mageplaza_affiliatenotification">
+        <label>Notification view page</label>
+        <update handle="affiliate_navigation"/>
+        <reference name="content">
+            <block type="mageplaza_affiliatenotification/notification_view" name="notification_view" template="mageplaza_affiliatenotification/notification/view.phtml" />
+        </reference>
+    </mageplaza_affiliatenotification_notification_view>
+
+    <affiliate_account_setting>
+        <reference name="affiliate.account.setting.extra">
+            <block type="mageplaza_affiliatenotification/account_setting" name="affiliate.news.notification" as="affiliate_news_notification" template="mageplaza_affiliatenotification/account/setting.phtml">
+            </block>
+        </reference>
+    </affiliate_account_setting>
+    <affiliate_index_index>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/mageplaza/affiliatenotification/style.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="affiliate.account.dashboard.extra">
+            <block type="mageplaza_affiliatenotification/notification_list" name="notification_list" template="mageplaza_affiliatenotification/notification/list.phtml" />
+
+        </reference>
+    </affiliate_index_index>
+    <affiliatenotification_email_notification>
+        <block type="mageplaza_affiliatenotification/email_notification" name="affiliatenotification_email_notification" template="mageplaza_affiliatenotification/email/notification.phtml" />
+    </affiliatenotification_email_notification>
+</layout>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mageplaza_AffiliateNotification extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Mageplaza.com  License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://mageplaza.com/license-agreement/
+ * 
+ * @category       Mageplaza
+ * @package        Mageplaza_AffiliateNotification
+ * @copyright      Copyright (c) 2016
+ * @license        https://mageplaza.com/license-agreement/
+ */
+--> 
+<layout>
+    <adminhtml_affiliatenotification_notification_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>affiliate/mageplaza_affiliatenotification/notification</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="mageplaza_affiliatenotification/adminhtml_notification" name="notification" />
+
+        </reference>
+    </adminhtml_affiliatenotification_notification_index>
+    <adminhtml_affiliatenotification_notification_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="mageplaza_affiliatenotification/adminhtml_notification_grid" name="notification_grid"/>
+        </block>
+    </adminhtml_affiliatenotification_notification_grid>
+    <!-- Notification add/edit action -->
+    <adminhtml_affiliatenotification_notification_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>affiliate/mageplaza_affiliatenotification/notification</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="mageplaza_affiliatenotification/adminhtml_notification_edit" name="notification_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="mageplaza_affiliatenotification/adminhtml_notification_edit_tabs" name="notification_tabs"></block>
+        </reference>
+    </adminhtml_affiliatenotification_notification_edit>
+
+</layout>
