@@ -6,7 +6,7 @@ By the easy way to understand, Affiliate Marketing brings a great chance to make
 
 ## Why Magento 2 Affiliate extension?
 
-Discovering the huge benefits from Affiliate Marketing, Mageplaza confidently releases Affiliate extension based on Magento 2 platform for all eCommerce stores. Mageplaza Refer Friends module becomes a crucial marketing tool when allowing to build multiple affiliate programs with a variety of actions to earn the commission as you need for the own Affiliate system. Coming with Magento 2 Affiliate Standard edition, you will arm the most necessary features for the successful marketing strategies.
+Discovering the huge benefits from Affiliate Marketing, [Mageplaza Affiliate extension](https://www.mageplaza.com/magento-2-affiliate-extension/) based on Magento 2 platform for all eCommerce stores. Mageplaza Refer Friends module becomes a crucial marketing tool when allowing to build multiple affiliate programs with a variety of actions to earn the commission as you need for the own Affiliate system. Coming with Magento 2 Affiliate Standard edition, you will arm the most necessary features for the successful marketing strategies.
 
 
 ## Affiliate marketing is an effective marketing strategy
